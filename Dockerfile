@@ -21,8 +21,7 @@ RUN rm -rf /Development/node
 
 RUN chmod 777 -R /Development
 
-RUN npm install -g yo bower grunt-cli generator-meanjs express mongoose
-
+RUN npm install -g yo bower grunt-cli generator-meanjs express mongoose phantomjs
 # RUN curl https://j.mp/spf13-vim3 -L > spf13-vim.sh && sh spf13-vim.sh
 
 EXPOSE 80:80
