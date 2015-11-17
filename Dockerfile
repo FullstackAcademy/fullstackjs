@@ -9,6 +9,7 @@ RUN echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-or
 RUN apt-get update
 #RUN apt-get install -y mongodb-org
 RUN apt-get install -y mongodb-org git python build-essential curl libssl-dev
+RUN apt-get install --yes --force-yes libgtk2.0-0 libidn11 libglu1-mesa
 RUN service mongod start
 
 RUN mkdir -p /data/db
