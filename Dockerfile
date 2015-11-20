@@ -16,7 +16,7 @@ RUN mkdir -p /data/db
 
 RUN mkdir /Development
 
-RUN cd /Development && git clone --branch v0.12.6 git://github.com/joyent/node
+RUN cd /Development && git clone --branch v5.1.0 git://github.com/joyent/node
 RUN cd /Development/node && ./configure && make && make install
 RUN rm -rf /Development/node
 
