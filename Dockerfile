@@ -11,15 +11,18 @@ RUN apt-get update
 #RUN apt-get install -y mongodb-org
 RUN apt-get install -y mongodb git python build-essential curl libssl-dev
 RUN apt-get install --yes --force-yes libgtk2.0-0 libidn11 libglu1-mesa
-RUN /etc/init.d/mongod start
+# RUN service mongodb start
+
+RUN mkdir -p /data/db
 
 # install Postgres http://tecadmin.net/install-postgresql-server-on-ubuntu/
 #RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list
 #RUN wget -q https://www.postgresql.org/media/keys/ACCC4CF8.asc -O - | apt-key add -
 #RUN apt-get update
 RUN apt-get install -y postgresql postgresql-contrib
+# RUN service postgresql start
 
-RUN mkdir -p /data/db
+
 
 RUN mkdir /Development
 
