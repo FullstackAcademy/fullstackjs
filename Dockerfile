@@ -4,14 +4,14 @@ MAINTAINER David Yang <david.g.yang@gmail.com>
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
-RUN echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-3.0.list
+# RUN echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-3.0.list
 
-RUN rm -rf /var/lib/apt/lists/partial/*
+# RUN rm -rf /var/lib/apt/lists/partial/*
 RUN apt-get update
 #RUN apt-get install -y mongodb-org
 RUN apt-get install -y mongodb-org git python build-essential curl libssl-dev
 RUN apt-get install --yes --force-yes libgtk2.0-0 libidn11 libglu1-mesa
-RUN service mongod start
+RUN /etc/init.d/mongod start
 
 # install Postgres http://tecadmin.net/install-postgresql-server-on-ubuntu/
 #RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list
