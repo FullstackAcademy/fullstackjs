@@ -26,7 +26,7 @@ RUN apt-get install -y postgresql postgresql-contrib
 
 RUN mkdir /Development
 
-RUN cd /Development && git clone --branch v5.1.0 git://github.com/nodejs/node
+RUN cd /Development && git clone --branch v8.1.4 git://github.com/nodejs/node
 RUN cd /Development/node && ./configure && make && make install
 RUN rm -rf /Development/node
 
