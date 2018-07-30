@@ -32,7 +32,7 @@ RUN rm -rf /Development/node
 
 RUN chmod 777 -R /Development
 
-RUN npm install -g bower express mongoose phantomjs-prebuilt
+RUN npm install -g bower express mongoose phantomjs-prebuilt --unsafe-perm
 # RUN curl https://j.mp/spf13-vim3 -L > spf13-vim.sh && sh spf13-vim.sh
 
 EXPOSE 80:80
