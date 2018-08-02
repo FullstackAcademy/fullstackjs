@@ -9,7 +9,7 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
 # RUN rm -rf /var/lib/apt/lists/partial/*
 RUN apt-get update
 #RUN apt-get install -y mongodb-org
-RUN apt-get install -y mongodb git python build-essential curl libssl-dev Xvfb
+RUN apt-get install -y mongodb git python build-essential curl libssl-dev xvfb wget
 RUN apt-get install --yes --force-yes libgtk2.0-0 libidn11 libglu1-mesa
 # RUN service mongodb start
 
