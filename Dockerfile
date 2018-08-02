@@ -9,7 +9,7 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
 # RUN rm -rf /var/lib/apt/lists/partial/*
 RUN apt-get update
 #RUN apt-get install -y mongodb-org
-RUN apt-get install -y mongodb git python build-essential curl libssl-dev
+RUN apt-get install -y mongodb git python build-essential curl libssl-dev Xvfb
 RUN apt-get install --yes --force-yes libgtk2.0-0 libidn11 libglu1-mesa
 # RUN service mongodb start
 
@@ -22,6 +22,9 @@ RUN mkdir -p /data/db
 RUN apt-get install -y postgresql postgresql-contrib
 # RUN service postgresql start
 
+# Install Chrome (for headless testing)
+RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+RUN dpkg -i google-chrome-stable_current_amd64.deb; apt-get -fy install
 
 
 RUN mkdir /Development
@@ -39,4 +42,4 @@ EXPOSE 80:80
 EXPOSE 443:443
 EXPOSE 3000:3000
 
-RUN echo "\n##############################\n1. Create a new user with adduser, 'su' into that user.\n2. 'yo meanjs' to scaffold your app in the current directory.\n3. Start mongo in the background (e.g. 'mongod &')\n##############################\n"
+# RUN echo "\n##############################\n1. Create a new user with adduser, 'su' into that user.\n2. 'yo meanjs' to scaffold your app in the current directory.\n3. Start mongo in the background (e.g. 'mongod &')\n##############################\n"
